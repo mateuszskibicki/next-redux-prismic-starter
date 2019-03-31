@@ -1,0 +1,96 @@
+.btn {
+    display: inline-block;
+	color: $text-color;
+	background-color: $white-primary;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+    font-size: 0.8rem;
+    font-weight: 600;
+	padding: 10px 30px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border: 1px solid rgba(0,0,0,0.3);
+    border-bottom-width: 3px;
+    box-shadow: $shadow;
+    cursor: pointer;
+    transition: .3s;
+
+    &:hover {
+        background-color: darken($white-primary, 10%);
+        color: $text-color;
+        border-color: rgba(0,0,0,0.3);
+        box-shadow: $shadow-md;
+        transform: scale(1.01) translateY(-3px);
+    }
+
+    &:active {
+        transform: scale(0.99) translateY(1px);
+        box-shadow: $shadow;
+    }
+
+    &-primary {
+        background-color: $primary-color-1;
+        color: $white-primary;
+
+        &:hover {
+            background-color: lighten($primary-color-1, 10%);
+            border-color: rgba(0,0,0,0.3);
+            color: $white-primary;
+        }
+    }
+
+    &-secondary {
+        background-color: $secondary-color;
+        color: $white-primary;
+
+        &:hover {
+            background-color: lighten($secondary-color, 10%);
+            border-color: rgba(0,0,0,0.3);
+            color: $white-primary;
+        }
+    }
+
+    &-small {
+        font-size: 0.7rem !important;
+        padding: 7px 15px;
+    }
+
+    &-copied {
+        animation: copiedButton 1s linear;
+        position: relative;
+        opacity: 0;
+    }
+}
+
+.dropdown-menu {
+    border-radius: 5px;
+    box-shadow: $shadow-md;
+    border-color: $primary-color-1;
+    .dropdown-item {
+        transition: .3s;
+        &:hover {
+            background-color: rgba($secondary-color, .2);
+            transform: scale(1.02);
+        }
+    }
+}
+
+@keyframes copiedButton {
+    0% {
+        opacity: 0;
+        left: -30px;
+    }
+    30% {
+        opacity: 0.8;
+        left: 0px;
+    }
+    70% {
+        opacity: 1;
+        left: 0px;
+    }
+    100% {
+        opacity: 0;
+        left: 30px;
+    }
+  }
