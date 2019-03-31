@@ -3,6 +3,9 @@ export default class MyDocument extends Document {
     render(){
         return (
             <html lang="en-UK">
+            <Head>
+                <link rel="stylesheet" />
+            </Head>
                 {/* <Head>
                     <link rel="manifest" href="/static/manifest.json" />
                     <meta name="mobile-web-app-capable" content="yes" />
