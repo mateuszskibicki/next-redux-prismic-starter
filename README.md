@@ -1,9 +1,11 @@
-# next-prismic-starter
-Starter Next.js (newest version 8 and react/react-dom version 16.8 - HOOKS!!) with headless CMS Prismi, Jest testing and custom Express.js server/routing
+# next-redux-prismic-starter
+Starter Next.js (newest version 8 and react/react-dom version 16.8 - HOOKS!! and redux global-state) with headless CMS Prismi, Jest testing and custom Express.js server/routing
 
 #Why starter like this?
 
 Server Side Rendering (Next.js) - connected with next-sass/node-sass -> see changes live
+
+Global state with Redux
 
 Jest testing with .babelrc so we can use node and react syntax
 
