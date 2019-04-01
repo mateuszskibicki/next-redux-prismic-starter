@@ -1,9 +1,10 @@
 import React from 'react'
+import Link from 'next/link'
 
 export default function _error() {
   return (
     <div>
-      error page
+      <Link href="/"><button>Homepage</button></Link>
     </div>
   )
 }

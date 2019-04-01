@@ -5,7 +5,7 @@ import {
 
 const initialState = {
     someFakeInfo: null,
-    moreFake: false
+    moreFake: []
 };
 
 export default function (state = initialState, action) {
@@ -18,7 +18,7 @@ export default function (state = initialState, action) {
         case FAKE_TYPE_2:
             return {
                 ...state,
-                moreFake: true
+                moreFake: action.payload
             };
         default:
             return state;

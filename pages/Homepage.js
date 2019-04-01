@@ -1,6 +1,7 @@
 import { connect } from "react-redux"
 import { MainLayout } from '../components/layout/MainLayout'
 import { setFake1 } from '../global-state/actions/fakeAction';
+import { setFake2 } from '../global-state/actions/fakeAction';
 
 class Homepage extends React.Component {
 
@@ -17,7 +18,10 @@ class Homepage extends React.Component {
         //     // you can do something with payload now
         //     return {custom: 'custom'}; 
         // });
-        console.log(store.getState())
+        console.log(1)
+        const action = await setFake2()
+        console.log(2, action)
+        await store.dispatch(action)
         return store
         
     }
@@ -31,7 +35,7 @@ class Homepage extends React.Component {
     }
 
     render() {
-        //console.log(this.props)
+        console.log(this.props)
         return (
             <MainLayout>
                 <h1>homepage</h1>
@@ -45,7 +49,7 @@ const mapStateToProps = state => ({
 	fake: state
 });
 
-export default connect(mapStateToProps, {setFake1})(Homepage)
+export default connect(mapStateToProps, {setFake1, setFake2})(Homepage)
 
 
 // import React, { Component } from 'react'

@@ -1,4 +1,4 @@
-//import axios from 'axios';
+import axios from 'axios';
 
 import {
 	FAKE_TYPE_1,
@@ -14,6 +14,9 @@ export const setFake1 = (argument) => dispatch => {
 };
 
 // Set loading state
-export const setFake2 = () => {
-	return { type: FAKE_TYPE_2 };
+export const setFake2 = () => async dispatch => {
+	//https://aws.random.cat/meow {file: .....}
+	//https://random.dog/woof.json {url: .....}
+	const photoURL = await axios.get('https://random.dog/woof.json')
+	dispatch({type: FAKE_TYPE_2, payload: photoURL.data.url})
 };
