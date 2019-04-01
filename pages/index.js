@@ -2,7 +2,7 @@ import { connect } from "react-redux"
 import { MainLayout } from '../components/layout/MainLayout'
 import { setFake1 } from '../global-state/actions/fakeAction';
 import { setFake2 } from '../global-state/actions/fakeAction';
-
+import { Link } from '../server/next-routes/routesFrontEnd'
 class Homepage extends React.Component {
 
     static async getInitialProps({store, isServer, pathname, query}) {
@@ -38,6 +38,7 @@ class Homepage extends React.Component {
             <MainLayout>
                 <h1>Check your redux state and console</h1>
                 <button onClick={this.setFakeState} className="btn btn-secondary">change state</button>
+                <Link route="/second"><button>Go to second page</button></Link>
             </MainLayout>
         )
     }

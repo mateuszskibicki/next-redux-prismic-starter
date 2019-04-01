@@ -19,16 +19,8 @@ const serverExpress = () => {
     // mongoose connect -> if needed
     //require('./database/db')();
 
-    // Next.js
-    server.get('*', async (req, res) => {
-        return handle(req, res)
-    })
-
-    // Listen port process.env.PORT || 3000
-    const port = process.env.PORT || 3000
-    return server.listen(port, () => {
-        process.env.NODE_ENV !== 'test' && console.log('> Ready on port: ' + port)
-    })
+    // Next.js -> use routes
+    return server.use(handle).listen(process.env.PORT || 3000)
 }
 
 // Next.js app if not test
