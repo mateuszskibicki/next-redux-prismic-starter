@@ -1,10 +1,10 @@
 import React from 'react'
-import Link from 'next/link'
+import Router from 'next/router';
 
 export default function _error() {
   return (
     <div>
-      <Link href="/"><button>Homepage</button></Link>
+        Click <span onClick={() => Router.push('/')}>here</span> to read more
     </div>
   )
 }

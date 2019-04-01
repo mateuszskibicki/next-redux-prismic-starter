@@ -18,27 +18,25 @@ class Homepage extends React.Component {
         //     // you can do something with payload now
         //     return {custom: 'custom'}; 
         // });
-        console.log(1)
+
         const action = await setFake2()
-        console.log(2, action)
         await store.dispatch(action)
         return store
-        
     }
 
     componentWillReceiveProps(nextProps) {
-        //console.log('props', nextProps)
+        console.log('nextProps', nextProps)
     }
 
     setFakeState = () => {
-        this.props.setFake1('fake')
+        this.props.setFake1('Changed state from null to this value')
     }
 
     render() {
-        console.log(this.props)
+        //console.log(this.props)
         return (
             <MainLayout>
-                <h1>homepage</h1>
+                <h1>Check your redux state and console</h1>
                 <button onClick={this.setFakeState} className="btn btn-secondary">change state</button>
             </MainLayout>
         )
@@ -49,7 +47,12 @@ const mapStateToProps = state => ({
 	fake: state
 });
 
-export default connect(mapStateToProps, {setFake1, setFake2})(Homepage)
+const mapDispatchToProps = (dispatch) => ({
+    setFake1: (arg) => {dispatch(setFake1(arg))},
+    setFake2: () => {dispatch(setFake2())}
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Homepage)
 
 
 // import React, { Component } from 'react'
